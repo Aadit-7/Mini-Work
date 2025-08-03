@@ -1,0 +1,74 @@
+/* ========== Base Reset & Global Styles ========== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: white;
+  background-color: #212121;
+}
+
+/* ========== Main Content ========== */
+main {
+  padding: 2rem;
+}
+
+/* Page Heading */
+h1 {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* ========== Projects Grid Layout ========== */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 30px; /* space between cards */
+  padding: 1rem;
+}
+
+/* ========== Project Card Style ========== */
+.project-link {
+  display: block;
+  padding: 40px 20px;
+  background-color: #ffffff;
+  color: #212121;
+  text-decoration: none;
+  border-radius: 16px;
+  border: 3px solid #212121;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover Effect */
+.project-link:hover {
+  transform: translateY(-10px);
+  background-color: #f0f0f0;
+  box-shadow: 0 12px 24px rgba(255, 255, 255, 0.2);
+}
+
+/* ========== Responsive Adjustments ========== */
+@media (max-width: 1024px) {
+  .projects {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+  }
+}
+
+@media (max-width: 640px) {
+  .projects {
+    grid-template-columns: 1fr; /* 1 card per row */
+  }
+
+  .project-link {
+    font-size: 1.2rem;
+    padding: 30px 15px;
+  }
+}

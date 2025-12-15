@@ -8,6 +8,17 @@ body {
   font-family: system-ui, sans-serif;
   color: white;
   background-color: #212121;
+  transition: all 2s linear;
+}
+
+body:has(.project-link:hover) .project-link {
+  transform: scale(0.8);
+  opacity: 0.5;
+}
+
+body .project-link:hover {
+  transform: scale(1.1) !important;
+  opacity: 1 !important;
 }
 
 /* ========== Main Content ========== */
@@ -35,24 +46,43 @@ h1 {
 .project-link {
   display: block;
   padding: 40px 20px;
-  background-color: #ffffff;
-  color: #212121;
+  /* background-color: #ffffff; */
+  color: whitesmoke;
   text-decoration: none;
   border-radius: 16px;
   border: 3px solid #212121;
   font-size: 1.4rem;
   font-weight: 600;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 0 0px rgb(190, 3, 140);
+  transition: transform 0.3s ease;
   cursor: pointer;
+}
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes borderRotate {
+  from {
+    --rotate: 0deg;
+  }
+  to {
+    --rotate: 360deg;
+  }
 }
 
 /* Hover Effect */
 .project-link:hover {
-  transform: translateY(-10px);
-  background-color: #f0f0f0;
-  box-shadow: 0 12px 24px rgba(255, 255, 255, 0.2);
+  background: linear-gradient(black) padding-box,
+    conic-gradient(from var(--rotate), black, rgb(190, 3, 140), black)
+      border-box;
+  box-shadow: 0 0 50px rgb(190, 3, 140);
+  border: 5px solid rgba(255, 255, 255, 0.001);
+  animation: borderRotate 5s infinite linear running;
+  text-shadow: 0 0 10px rgb(230, 8, 171);
 }
 
 /* ========== Responsive Adjustments ========== */

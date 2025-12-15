@@ -55,7 +55,7 @@ h1 {
   font-weight: 600;
   text-align: center;
   box-shadow: 0 0 0px rgb(190, 3, 140);
-  transition: transform 0.3s ease;
+  transition: all 0.5s ease;
   cursor: pointer;
 }
 

@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+body {
+  background-color: black;
+  color: whitesmoke;
+}
+
+button {
+  color: whitesmoke;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  position: relative;
+  z-index: 99;
+  border-radius: 15px;
+  background-color: rgba(240, 248, 255, 0);
+}
+
+button:active {
+  transform: scale(0.95);
+}

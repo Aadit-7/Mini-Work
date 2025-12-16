@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  /* background-color: rgba(0, 0, 0, 0); */
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  background-image: url(./Spidy.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+:root {
+  --x: 400px;
+  --y: 400px;
+}
+
+.box {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: radial-gradient(
+    100px at var(--x) var(--y),
+    rgba(255, 255, 255, 0) 30%,
+    rgba(0, 0, 0, 0.644) 70%
+  );
+  cursor: none;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+span {
+  color: royalblue;
+}
+
+.card {
+  width: 600px;
+  background-color: black;
+  color: whitesmoke;
+  padding: 20px 50px;
+  border-radius: 10px;
+}
+
+.card:hover {
+  box-shadow: 0 0 100px whitesmoke;
+  transform: scale(1.2);
+}
+
+.outer {
+  height: 20px;
+  width: 100%;
+  background-color: gray;
+  border-radius: 10px;
+}
+
+.inner {
+  height: 100%;
+  width: 0%;
+  background-color: green;
+  border-radius: 10px;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.bottom h2 {
+  font-size: 40px;
+  white-space: nowrap;
+}
+
+.bottom button {
+  padding: 10px 20px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+}
+
+.bottom button:active {
+  scale: 0.95;
+}

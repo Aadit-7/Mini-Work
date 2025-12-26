@@ -233,3 +233,52 @@ body {
     height: 100vw;
   }
 }
+
+/* =========================================
+   MOBILE LANDSCAPE FIX (IMPORTANT)
+   ========================================= */
+
+@media (max-width: 900px) and (orientation: landscape) {
+  .pannel {
+    height: 95vh; /* use viewport height */
+    width: 95vw;
+  }
+
+  .upperPannel {
+    height: 60px; /* reduce header height */
+  }
+
+  .box {
+    font-size: 14px;
+    gap: 6px;
+  }
+
+  .display {
+    padding: 6px 8px;
+    font-size: 14px;
+  }
+
+  .lowerPannel {
+    height: calc(100% - 60px);
+    padding: 5px;
+    gap: 6px;
+  }
+
+  .bubble {
+    height: 28px;
+    width: 28px;
+    font-size: 13px;
+  }
+
+  .game-over-message h1 {
+    font-size: 1.8rem;
+  }
+
+  .game-over-message h2 {
+    font-size: 1.2rem;
+  }
+
+  .game-over-message h3 {
+    font-size: 1rem;
+  }
+}

@@ -1,3 +1,7 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+*/
+
 * {
   margin: 0;
   padding: 0;
@@ -39,12 +43,11 @@ body {
 
 .box {
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 10px;
   color: white;
   font-size: 20px;
-  font-weight: 700px;
+  font-weight: 700;
 }
 
 .display {
@@ -52,13 +55,8 @@ body {
   color: black;
   padding: 10px;
   font-size: 20px;
-  font-weight: 700px;
+  font-weight: 700;
   border-radius: 5px;
-}
-
-.btn {
-  height: 35px;
-  width: 70px;
 }
 
 .lowerPannel {
@@ -66,11 +64,10 @@ body {
   height: calc(100% - 100px);
   padding: 10px;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
-  /* overflow: scroll; */
+  justify-content: center;
+  align-items: center;
 }
 
 .bubble {
@@ -84,6 +81,7 @@ body {
   color: white;
   font-size: 17px;
   font-weight: 900;
+  cursor: pointer;
 }
 
 .bubble:hover {
@@ -102,13 +100,136 @@ body {
   color: black;
 }
 
-.game-over-message h2 {
-  font-size: 2rem;
-  color: rgb(30, 90, 30);
-  margin-bottom: 10px;
+/* ===================================================
+   START SCREEN (NEW — DOES NOT AFFECT GAME STYLES)
+   =================================================== */
+
+.start-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
 }
 
-.game-over-message h3 {
-  font-size: 1.5rem;
-  color: #000;
+.start-screen h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.start-screen p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.start-screen button {
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: rgb(55, 122, 55);
+  color: white;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.start-screen button:hover {
+  background-color: rgb(80, 170, 80);
+  transform: scale(1.05);
+}
+
+@media screen and (orientation: portrait) {
+  body::before {
+    content: "🔄 Rotate your phone to landscape to play the game";
+    position: fixed;
+    inset: 0;
+    background: rgb(140, 235, 140);
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    z-index: 9999;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .main {
+    display: none;
+  }
+}
+
+/* ================= START OVERLAY ================= */
+
+.start-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.start-box {
+  background-color: white;
+  padding: 30px 40px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 90%;
+}
+
+.start-box h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.start-box p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.start-box button {
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  background-color: rgb(55, 122, 55);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.start-box button:active {
+  scale: 0.95;
+}
+
+.rotate-note {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* ===== Landscape optimization for phones ===== */
+@media (max-width: 768px) and (orientation: portrait) {
+  .start-overlay {
+    transform: rotate(90deg);
+    transform-origin: center;
+    width: 100vh;
+    height: 100vw;
+  }
 }

@@ -1,14 +1,28 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 html,
 body {
   height: 100%;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   overflow: hidden;
 }
@@ -29,5 +43,71 @@ button {
 }
 
 button:active {
+  -webkit-transform: scale(0.95);
+  -ms-transform: scale(0.95);
   transform: scale(0.95);
+}
+
+/* ================= RESPONSIVE ADD-ONS ================= */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  body {
+    overflow: hidden;
+  }
+  button {
+    font-size: 18px;
+    padding: 10px 18px;
+    border-radius: 14px;
+  }
+}
+
+/* Large phones */
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+    overflow: hidden;
+  }
+
+  button {
+    font-size: 17px;
+    padding: 10px 16px;
+    border-radius: 12px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  body {
+    padding: 15px;
+    overflow: hidden;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 8px 14px;
+    border-radius: 10px;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 360px) {
+  body {
+    overflow: hidden;
+  }
+  button {
+    font-size: 15px;
+    padding: 8px 12px;
+  }
+}
+
+/* Landscape phones */
+@media (max-height: 450px) and (orientation: landscape) {
+  body {
+    overflow: hidden;
+  }
+  button {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
 }

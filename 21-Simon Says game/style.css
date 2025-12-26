@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 body {
   text-align: center;
   background: #000;
@@ -13,8 +20,14 @@ body {
 }
 
 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -42,4 +55,106 @@ p {
   padding-top: 70px;
   font-size: 20px;
   color: #000;
+}
+
+button {
+  background-color: rgb(158, 55, 158);
+  color: white;
+  font-size: 20px;
+  padding: 10px 30px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+  margin: 20px;
+}
+button:active {
+  scale: 0.95;
+}
+
+h3 {
+  display: none;
+}
+
+/* ================= RESPONSIVE ADD-ONS ================= */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .btn {
+    height: 160px;
+    width: 160px;
+    margin: 8px;
+  }
+
+  p {
+    padding-top: 50px;
+    font-size: 18px;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 10px 25px;
+  }
+}
+
+/* Large phones */
+@media (max-width: 768px) {
+  .container {
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    height: 130px;
+    width: 130px;
+    margin: 8px;
+  }
+
+  p {
+    padding-top: 40px;
+    font-size: 16px;
+  }
+
+  button {
+    font-size: 17px;
+    padding: 10px 22px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .btn {
+    height: 100px;
+    width: 100px;
+    margin: 6px;
+    border-width: 5px;
+  }
+
+  p {
+    padding-top: 30px;
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 8px 20px;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 360px) {
+  .btn {
+    height: 85px;
+    width: 85px;
+  }
+
+  button {
+    font-size: 15px;
+    padding: 8px 18px;
+  }
 }

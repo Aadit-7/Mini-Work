@@ -1,10 +1,31 @@
 let ranNum = 0;
 let timmer = 60;
 let score = 0;
+let gameStarted = false;
 
 const lowerPannel = document.querySelector(".lowerPannel");
+const startScreen = document.querySelector(".start-screen");
+const startBtn = document.getElementById("startGameBtn");
 
+// ================= START GAME =================
+startBtn.addEventListener("click", () => {
+  startScreen.style.display = "none";
+  startGame();
+});
+
+function startGame() {
+  if (gameStarted) return;
+  gameStarted = true;
+
+  changeHit();
+  createBubble();
+  changeTimmer();
+}
+
+// ================= GAME LOGIC =================
 lowerPannel.addEventListener("click", (event) => {
+  if (!gameStarted) return;
+
   if (event.target.classList.contains("bubble")) {
     const clickedBubble = Number(event.target.textContent);
     if (clickedBubble === ranNum) {
@@ -48,6 +69,7 @@ function createBubble() {
 
 function displayScore() {
   let message = "";
+
   if (score >= 500) {
     message = `You Hacker 😱😱!`;
   } else if (score >= 320) {
@@ -65,12 +87,7 @@ function displayScore() {
       <h1>Game Over</h1>
       <h2>${message}</h2>
       <h3>Your Score: ${score}/500</h3>
-     <h2>‼️ Refresh to Start New Game</h2>
-
-    </div>`;
+      <h2>‼️ Refresh to Start New Game</h2>
+    </div>
+  `;
 }
-
-// Start the game
-changeTimmer();
-createBubble();
-changeHit();

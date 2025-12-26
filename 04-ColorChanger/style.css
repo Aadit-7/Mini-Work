@@ -1,23 +1,64 @@
-html {
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+html,
+body {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* Ensure consistent box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Stack spans safely */
 span {
   display: block;
 }
+
+/* ===== Canvas Container ===== */
 .canvas {
-  margin: 100px auto 100px;
+  margin: 60px auto;
   width: 80%;
+  max-width: 800px;
   text-align: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
+/* ===== Color Buttons ===== */
 .button {
   width: 100px;
   height: 100px;
   border: solid black 2px;
-  display: inline-block;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.button:active {
+  transform: scale(0.95);
+}
+
+/* Hover effect (desktop only feel) */
+.button:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== Colors ===== */
 #grey {
   background: grey;
 }
@@ -25,15 +66,46 @@ span {
 #aqua {
   background: aqua;
 }
+
 #blue {
   background: blue;
 }
+
 #yellow {
   background: yellow;
 }
+
 #purple {
   background-color: purple;
 }
+
 #green {
   background-color: green;
+}
+
+/* ===== Tablet Responsive ===== */
+@media (max-width: 768px) {
+  .canvas {
+    width: 90%;
+    gap: 16px;
+  }
+
+  .button {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* ===== Mobile Responsive ===== */
+@media (max-width: 480px) {
+  .canvas {
+    width: 95%;
+    gap: 14px;
+  }
+
+  .button {
+    width: 70px;
+    height: 70px;
+    border-width: 1.5px;
+  }
 }

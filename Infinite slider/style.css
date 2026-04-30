@@ -1,0 +1,61 @@
+.scroll-container {
+  position: relative;
+  overflow: hidden;
+  width: 40%;
+  padding: 20px 0;
+}
+
+.scroll-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 20s linear infinite;
+}
+
+.scroll-track:hover {
+  animation-play-state: paused;
+}
+
+.item {
+  padding: 10px 20px;
+  margin: 0 10px;
+  background: #1e1e1e;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: bold;
+  white-space: nowrap;
+  transition: transform 0.3s ease;
+}
+
+.item:hover {
+  transform: scale(1.1);
+}
+
+.scroll-container::before,
+.scroll-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.scroll-container::before {
+  left: 0;
+  background: linear-gradient(to right, #0f0f0f, transparent);
+}
+
+.scroll-container::after {
+  right: 0;
+  background: linear-gradient(to left, #0f0f0f, transparent);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

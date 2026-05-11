@@ -1,0 +1,29 @@
+.scroll-section {
+  display: flex;
+}
+
+.image-box {
+  position: sticky;
+  top: 0;
+
+  width: 50%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-box img {
+  width: 80%;
+  border-radius: 20px;
+  transition: 0.4s ease;
+}
+
+.content {
+  width: 50%;
+}
+
+.step {
+  height: 100vh;
+}
